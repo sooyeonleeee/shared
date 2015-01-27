@@ -24,7 +24,7 @@ public class MyClassTest {
 		logger.trace("수업: "+std);
 		
 		MyClass mc = ctx.getBean(MyClass.class);
-		logger.trace("수업:"+mc);
+		logger.trace("수업: "+mc);
 		
 		
 		//myclass 빈을 얻어와서 정보 출력
