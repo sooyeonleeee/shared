@@ -16,7 +16,7 @@
 	<constructor-arg name="ip" value="127.0.0.1"></constructor-arg>
 	<constructor-arg name="user" value="scott"></constructor-arg>
 	</bean>
-	<bean id="devimecommentDao" class="xmldi.dao.CommentdaoImpl">
+	<bean id="devtimecommentDao" class="xmldi.dao.CommentdaoImpl">
 	<constructor-arg name="ip" value="127.0.0.2"></constructor-arg>
 	<constructor-arg name="user" value="scott"></constructor-arg>
 	</bean>

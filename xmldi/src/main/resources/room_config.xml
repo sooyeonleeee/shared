@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="room" class="room.Room" p:buildingName="율곡관" p:floor="4" p:roomNumber="401" abstract="true"></bean>
+<!-- 다른 객체를 만들때 참조하는 빈(객체 생성하지 않는 빈) -->
+<bean id="myRoom" parent="room" p:roomNumber="402"></bean>
+<bean id="yourRoom" parent="room" p:roomNumber="403" p:floor="5"></bean>
+
+
+</beans>
