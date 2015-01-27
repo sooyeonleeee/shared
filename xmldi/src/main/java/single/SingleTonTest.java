@@ -31,6 +31,7 @@ public class SingleTonTest {
 		
 		// getInstance() 함수를 호출하지 않고
 		// bean으로 쓰면 생성자를 호출함
+		// getInstance() 함수를 호출하려면 bean에 factory-method를 작성해주면 됨.
 		SingleTonDao dao = ctx.getBean(SingleTonDao.class);
 		dao.method();
 		
