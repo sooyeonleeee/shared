@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- <bean id="commentDao" class="xmldi.dao.CommentdaoImpl">
+	<property name="serverIp" value="127.0.0.1"></property>
+	<property name="user" value="scott"></property>
+	</bean> -->
+	<!-- property와 constructor-arg 둘중하나 -->
+	<!-- constructor-arg는 생성자를 통해서 주입받을 때 사용 -->
+	<!-- 상황에 따라 bean을 여러 개 등록할 수 있음. -->
+	<bean id="runtimecommentDao" class="xmldi.dao.CommentdaoImpl">
+	<constructor-arg name="ip" value="127.0.0.1"></constructor-arg>
+	<constructor-arg name="user" value="scott"></constructor-arg>
+	</bean>
+	<bean id="devimecommentDao" class="xmldi.dao.CommentdaoImpl">
+	<constructor-arg name="ip" value="127.0.0.2"></constructor-arg>
+	<constructor-arg name="user" value="scott"></constructor-arg>
+	</bean>
+	<bean id="commentService" class="xmldi.service.CommentServiceImpl">
+	<constructor-arg name="dao" ref="runtimecommentDao"></constructor-arg>
+	</bean>
+	
+</beans>
